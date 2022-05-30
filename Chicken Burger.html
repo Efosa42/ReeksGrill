@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name='language' content='english, en' />
+  <!-- Mobile Metas -->
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Site Metas -->
+  <meta name="keywords" content="barbeque, shawarma, reeksgrill" />
+  <meta name="description" content="barbeque resturant" />
+  <meta name="author" content="oviwe efosa iruosa" />
+  <link rel="shortcut icon" href="gallery/logo.png" type="">
+  
+  <title> ReeksGrill </title>
+  
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+		
+		
+		<!--originals-->
+        <link rel="stylesheet" href="styles.css" />
+       	
+</head>
+    <body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/blue.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ReeksGrill
+            </span>
+          </a>
+		  
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+			  
+			  <li class="nav-item"><a class="nav-link" href="livechat.html"><i class="fa fa-headset"></i>Customer Support</a></li>
+			 </ul>
+            <div class="user_option">
+         
+              <a href="cart.html" class="order_online">
+                Order Online
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+	  </header>
+    <!-- end header section -->
+  </div>
+  <br>
+
+<!--track order-->
+
+<center><a href="track.html"><i class="fa fa-truck"></i>Track Order</a></center>
+
+<!--track order-->
+<hr>
+<center>
+
+<p>amount: ₦1,500</p>
+
+
+</center>
+
+<hr>
+
+
+<!---FOOD SECTION--->
+<center>
+<h5>Quick Order for Chicken Burger</h5>
+<img src="gallery/f2.png" alt="" />
+<hr>
+<h5>Fill in your delivery information</h5>
+</center>
+
+<hr>
+       
+			
+			
+			<div class="col">
+     
+		 
+		 <form action="https://submit-form.com/jmOlrw6q" id="paymentForm" target="_blank">
+  <input type="hidden" class="form-control" id="Chicken Burger" name="Quick Order" value="Chicken Burger" required="" />
+  
+		 
+		 
+  <label for="name">Full Name</label>
+  <input type="text" class="form-control" id="first-name" name="name" placeholder="Full Name" required="" />
+  <br>
+  <label for="email">Email Address</label>
+    <input type="email" class="form-control"  id="email-address" name="email" placeholder="Email Address" required />
+	<br>
+  <label for="phone">Phone Number</label>
+  <input type="phone" class="form-control" id="phone" name="phone" placeholder="Phone Number" required="" />
+  
+  <br>
+  <label for="Address">Delivery Address</label>
+  <textarea
+    id="address"
+	class="form-control"
+    name="address"
+    placeholder="Delivery Address"
+    required=""
+  ></textarea>
+  <br>
+ 
+   
+   <!--customization-->
+   
+   <input type="hidden" name="_feedback.dark" value="true" />
+   <input
+    type="hidden"
+    name="_feedback.success.title"
+    value="Close this tab to input card details. Take a screenshot of payment if successful showing your refernce number. ReeksGrill"/>
+   
+   <!--customization-->
+   
+  <!--return payment button back here-->
+  
+  
+<div class="form-submit">
+ <button class="btn btn-primary btn-purchase" style="background: orange; color: white;" id="purchase-btn"  type="submit" onclick="payWithPaystack()">PURCHASE</button>
+</div>
+  
+  
+  <!--return payment button back here-->				   
+	
+	<!--gateway-->			  
+				
+   <script src="https://js.paystack.co/v1/inline.js"></script> 
+   
+   <script>
+   
+   var paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener('submit', payWithPaystack, false);
+function payWithPaystack() {
+  var handler = PaystackPop.setup({
+    key: 'pk_test_8cdb0c9f1d095752c2a8ff36e029ccbec6c875b6', // Replace with your public key
+    email: document.getElementById('email-address').value,
+    amount:  1500 * 100,
+    currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+    callback: function(response) {
+      //this happens after the payment is completed successfully
+      var reference = response.reference;
+      alert('Quick Order complete! Receipt for payment sent to email. Reference: ' + reference);
+      // Make an AJAX call to your server with the reference to verify the transaction
+    },
+    onClose: function() {
+      alert('Transaction was not completed, close window and retry.');
+    },
+  });
+  handler.openIframe();
+}
+
+   
+   </script>
+   
+   
+   
+   
+   
+   <!--gateway-->		
+   
+   
+   
+            
+			
+</form>
+		 </div>
+		 
+        </section>
+       
+		<center> <h5>Delivery usually takes 30 minutes to an hour (within this time period you will recieve a call from one of our riders)</h5>
+			If your delivery is taking longer than expected please contact our <a href="livechat.html">customer support team</a> 
+			
+			
+                  <p class="mt-4 text-sm text-center">
+                    Having an issue with your Order? Contact us via our live chat -
+                    <a href="livechat.html" class="text-primary text-gradient font-weight-bold">Customer support</a>
+                  </p>
+				  </center>
+				  
+
+		
+ 
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              Contact Us
+            </h4>
+            <div class="contact_link_box">
+              <a href="about.html#map">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location: Plot 70, Limit Road, Off Sapele Road, Benin City
+                </span>
+              </a>
+              <a href="tel:+2348029792122">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call: +2348029792122
+                </span>
+              </a>
+              <a href="mailto:reeksgrill@gmail.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Mail: reeksgrill@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+		
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+         <a href="#" class="footer-logo">
+              ReeksGrill
+            </a>
+            <p>
+              We also engage in Car Washing services.
+For more enquiries please call  <a href="tel:+2348029792122"> +2348029792122 </a></p>
+
+Follow Us On<br>
+            <div class="footer_social">
+			
+			  <a href="http://www.instagram.com/reeks_grill">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="http://www.twitter.com/ReeksGrill">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+			 
+            </div>
+						 <h4>
+            <a href="track.html">Track Order</a>
+          </h4>
+          </div>
+
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Opening Hours
+          </h4>
+          <p>
+            Everyday
+          </p>
+          <p>
+            11.00 am -10.00 pm
+          </p>
+		  <h4>
+            <a href="livechat.html">Customer Support</a>
+          </h4>
+        </div>
+      </div>
+	  </div>
+
+	  
+	  
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+         ReeksGrill<br><br>
+          &copy; <span id="displayYear"></span>Designed By
+          <a href="https://efosa42.github.io/Astro.github.io/" target="_blank">Oviawe Efosa</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  
+  
+  
+   
+
+</body>
+
+</html>
