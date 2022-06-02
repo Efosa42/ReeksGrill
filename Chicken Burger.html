@@ -148,7 +148,7 @@
    <input
     type="hidden"
     name="_feedback.success.title"
-    value="Close this tab to input card details. Take a screenshot of payment if successful showing your refernce number. ReeksGrill"/>
+    value="Close this tab to input card details. Take a screenshot of payment if successful showing your reference number. ReeksGrill"/>
    
    <!--customization-->
    
@@ -172,7 +172,7 @@
 paymentForm.addEventListener('submit', payWithPaystack, false);
 function payWithPaystack() {
   var handler = PaystackPop.setup({
-    key: 'pk_test_8cdb0c9f1d095752c2a8ff36e029ccbec6c875b6', // Replace with your public key
+    key: 'pk_live_eb383dd3d61565673e3cae24dcad96fe068fda07', // Replace with your public key
     email: document.getElementById('email-address').value,
     amount:  1500 * 100,
     currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
