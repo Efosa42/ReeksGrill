@@ -96,7 +96,7 @@
             <div class="user_option">
              
               
-			                <a href="cart.html" class="order_online">
+			                <a href="tips.html" class="order_online">
                 Order Online
               </a>
             </div>
@@ -121,7 +121,7 @@
                       We are tested and trusted , ReeksGrill will never fail to deliver.
 					  </p>
                     <div class="btn-box">
-                      <a href="cart.html" class="btn1">
+                      <a href="tips.html" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -142,7 +142,7 @@
 Giving you a delightful taste that would leave you wanting for more.                      
 					  </p>
                     <div class="btn-box">
-                      <a href="cart.html" class="btn1">
+                      <a href="tips.html" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -163,7 +163,7 @@ Giving you a delightful taste that would leave you wanting for more.
                       Anything prepared at ReeksGrill will leave you with nothing but pure satisfaction.
 					  </p>
                     <div class="btn-box">
-                      <a href="cart.html" class="btn1">
+                      <a href="tips.html" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -707,7 +707,7 @@ Follow Us On<br>
    <input
     type="hidden"
     name="_feedback.success.title"
-    value="Close this tab to input card details. Take a screenshot of payment if successful showing your reference number. ReeksGrill"/>
+    value="Close this tab to input card details. Payment gateway might take up to a minute to appear. ReeksGrill"/>
    
    <!--general customization-->
    	
@@ -767,7 +767,7 @@ Follow Us On<br>
    <input
     type="hidden"
     name="_feedback.success.title"
-    value="Close this tab to input card details. Take a screenshot of payment if successful showing your reference number. ReeksGrill"/>
+    value="Close this tab to input card details. Payment gateway might take up to a minute to appear. ReeksGrill"/>
    
    <!--general customization-->
    	
@@ -829,7 +829,7 @@ Follow Us On<br>
    <input
     type="hidden"
     name="_feedback.success.title"
-    value="Close this tab to input card details. Take a screenshot of payment if successful showing your reference number. ReeksGrill"/>
+    value="Close this tab to input card details. Payment gateway might take up to a minute to appear. ReeksGrill"/>
    
    <!--general customization-->
    	
@@ -876,6 +876,19 @@ function payWithPaystack() {
       alert('Quick Order complete! Receipt for payment sent to email. Reference: ' + reference);
       // Make an AJAX call to your server with the reference to verify the transaction
     },
+    callback: function(response){
+  $.ajax({
+    url: 'https://efosa42.github.io/ReeksGrill/',
+    method: 'get',
+    success: function (response) {
+      // the transaction status is in response.data.status
+    }
+  });
+},
+callback: function(response) {
+  window.location = "https://efosa42.github.io/ReeksGrill/";
+},
+// 
     onClose: function() {
       alert('Transaction was not completed, close window and retry.');
     },
@@ -907,13 +920,25 @@ function payWithPaystack() {
       alert('Quick Order complete! Receipt for payment sent to email. Reference: ' + reference);
       // Make an AJAX call to your server with the reference to verify the transaction
     },
+    callback: function(response){
+  $.ajax({
+    url: 'https://efosa42.github.io/ReeksGrill/',
+    method: 'get',
+    success: function (response) {
+      // the transaction status is in response.data.status
+    }
+  });
+},
+callback: function(response) {
+  window.location = "https://efosa42.github.io/ReeksGrill/";
+},
+// 
     onClose: function() {
       alert('Transaction was not completed, close window and retry.');
     },
   });
   handler.openIframe();
 }
-
 </script>
 <!--Bbq and Chips--> 
 
@@ -938,6 +963,19 @@ function payWithPaystack() {
       alert('Quick Order complete! Receipt for payment sent to email. Reference: ' + reference);
       // Make an AJAX call to your server with the reference to verify the transaction
     },
+    callback: function(response){
+  $.ajax({
+    url: 'https://efosa42.github.io/ReeksGrill/',
+    method: 'get',
+    success: function (response) {
+      // the transaction status is in response.data.status
+    }
+  });
+},
+callback: function(response) {
+  window.location = "https://efosa42.github.io/ReeksGrill/";
+},
+// 
     onClose: function() {
       alert('Transaction was not completed, close window and retry.');
     },

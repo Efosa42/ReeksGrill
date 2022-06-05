@@ -73,7 +73,7 @@
 			 </ul>
             <div class="user_option">
          
-              <a href="cart.html" class="order_online">
+              <a href="tips.html" class="order_online">
                 Order Online
               </a>
             </div>
@@ -182,12 +182,26 @@ function payWithPaystack() {
       alert('Quick Order complete! Receipt for payment sent to email. Reference: ' + reference);
       // Make an AJAX call to your server with the reference to verify the transaction
     },
+    callback: function(response){
+  $.ajax({
+    url: 'https://efosa42.github.io/ReeksGrill/Shawarma.html',
+    method: 'get',
+    success: function (response) {
+      // the transaction status is in response.data.status
+    }
+  });
+},
+callback: function(response) {
+  window.location = "https://efosa42.github.io/ReeksGrill/Shawarma.html";
+},
+// 
     onClose: function() {
       alert('Transaction was not completed, close window and retry.');
     },
   });
   handler.openIframe();
 }
+
 
    
    </script>
